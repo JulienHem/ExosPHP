@@ -58,6 +58,17 @@ echo ("h");
 echo date('i');
 
 // Ajoutez 1 mois à la date courante.
+echo("<br>");
 
+$date = new DateTime();
+$date->add(new DateInterval('P1M'));
+echo $date->format('d/m/Y');
+
+// Que s'est-il passé le 1000200000
+echo("<br>");
+
+$t = new DateTime();
+$t -> setTimestamp(1000200000);
+echo $t->format('U = d/m/Y H:i:s');
 
 
