@@ -11,7 +11,21 @@
 
 $csvfile = file("customers.csv");
 
+
+echo "<table>";
+echo "<tr><td>Nom</td><td>Prénom</td><td>Mail</td>
+<td>Code Postal</td><td>Région</td><td>Ville</td>";
+
 foreach ($csvfile as $string) {
     $separ = explode(",", $string);
-    echo "<table>". "<tr>" . "<td>" .$string ."</td>". "</tr>" . "<br>";
+    echo "<tr>";
+
+    foreach($separ as $item){
+        echo "<td>".$item."</td>";
+    }
+echo "</tr>";
+
+
 }
+
+echo "</table>";
