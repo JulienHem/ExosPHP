@@ -6,7 +6,7 @@ function connexionBase()
     // Paramètre de connexion serveur
 
     $host = "localhost:3306";
-    $login = "root";  // Votre loggin d'accès au serveur de BDD
+    $login = "root";  // Votre login d'accès au serveur de BDD
     $password = "";    // Le Password pour vous identifier auprès du serveur
     $base = "velvet";  // La bdd avec laquelle vous voulez travailler
 

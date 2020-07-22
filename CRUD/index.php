@@ -1,6 +1,6 @@
 <?php
 require "fonctions/fonctions.php";
-include("navbar.php");
+include("assets/template/navbar.php");
 
 
 $db = connexionBase();
@@ -11,45 +11,52 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
 
 
 ?>
+<div class="container">
 
-<body>
-<div class="row">
-    <div class="col-6">
-        <p class="h3 font-weight-bold">Liste des disques ()</p>
+    <div class="row m-0 p-0">
+        <div class="col-sm-12 col-md-6 col-xl-6 p-0 d-flex justify-content-center
+     justify-content-md-start justify-content-lg-start">
+            <p class="h3 font-weight-bold">Liste des disques (<?= count($stock); ?>)</p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-6 p-0 d-flex justify-content-center
+     justify-content-md-end justify-content-lg-end mb-2 ">
+            <a class="btn btn-dark " href="add_form.php">Ajouter</a>
+        </div>
     </div>
-    <div class="col-1 offset-5 ">
-        <button type="button" class="btn btn-dark">Ajouter</button>
-    </div>
-</div>
 
 
-<div class="row">
-    <?php
-    foreach ($stock
+    <div class="row">
+        <?php
+        foreach ($stock
 
-             as $value) {
-        ?>
+                 as $value) {
+            ?>
 
-        <div class="col-6">
-            <div class="row mb-2">
-                <div class="col-6">
-                    <img alt="img" src="img/<?php echo $value->disc_picture ?> " class="img-fluid">
-                </div>
-                <div class="col-6">
-                    <p class="h5 pb-n1"><?php echo $value->disc_title ?></p>
-                    <p><?php echo $value->artist_name ?></p>
-                    <p>Label : <?php echo $value->disc_label ?></p>
-                    <p>Year : <?php echo $value->disc_year ?></p>
-                    <p>Genre : <?php echo $value->disc_genre ?></p>
-                    <button type="button" class="btn btn-dark">Details</button>
+            <div class="col-sm-12 col-md-6">
+                <div class="row m-0 p-0 mb-2">
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+                        <img alt="img" src="assets/img/<?= $value->disc_picture ?> " class="w-100 shadow">
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 ">
+                        <p class="h5 text-center font-weight-bold text-md-center text-lg-left mt-3 mb-n1"><?= $value->disc_title ?></p>
+                        <p class="font-weight-bold text-center text-md-center text-lg-left mt-4 mb-n1"><?= $value->artist_name ?></p>
+                        <p class="text-center text-md-center text-lg-left mb-n1"><b>Label</b> : <?= $value->disc_label ?></p>
+                        <p class="text-center text-md-center text-lg-left mb-n1"><b>Year</b> : <?= $value->disc_year ?></p>
+                        <p class="text-center text-md-center text-lg-left "><b>Genre</b> : <?= $value->disc_genre ?></p>
+                        <div class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">
+                            <a class="btn btn-dark"
+                               href="details.php?disc_id=<?= $value->disc_id ?>">Details</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
 
-        <?php
-    }
-    ?>
-
-</body>
+            <?php
+        }
+        ?>
+    </div>
 </div>
+</body>
+
 </html>
