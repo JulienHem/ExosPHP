@@ -1,6 +1,10 @@
 <?php
 require "fonctions/fonctions.php";
-include("assets/template/head.php");
+
+if(file_exists("assets/template/head.php")) {
+    include("assets/template/head.php");
+};
+
 
 $db = connexionBase();
 
@@ -57,8 +61,8 @@ $stock = $requete->fetchObject();
 
 
         <div class="mt-3">
-            <a class="btn btn-dark " href="update_form.php?disc_id=<?=$stock->disc_id ?>">Modifier</a>
-            <a class="btn btn-dark " href="delete_form.php?disc_id=<?=$stock->disc_id ?>">Supprimer</a>
+            <a class="btn btn-dark " href="views/update_form.php?disc_id=<?=$stock->disc_id ?>">Modifier</a>
+            <a class="btn btn-dark " href="views/delete_form.php?disc_id=<?=$stock->disc_id ?>">Supprimer</a>
             <a class="btn btn-dark " href="index.php">Retour</a>
         </div>
 

@@ -1,7 +1,11 @@
 <?php
-include("assets/template/head.php");
+include("../assets/template/head.php");
 
-require "fonctions/fonctions.php";
+require "../fonctions/fonctions.php";
+
+$_POST["subpath"] = "sub_form.php";
+$_POST["connexionpath"] = "login_form.php";
+
 
 $db = connexionBase();
 
@@ -18,8 +22,8 @@ $stock2 = $requete2->fetchAll(PDO::FETCH_OBJ);
 
     <body>
 
-    <p class="h3 font-weight-bold">Supprimer</p>
-    <form action="script/delete_script.php?disc_id=<?= $disc_id?>" method="post" enctype="multipart/form-data">
+    <p class="h3 font-weight-bold">Modifier un vinyle</p>
+    <form action="../script/update_script.php?disc_id=<?= $disc_id?>" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="title">Titre</label>
@@ -61,16 +65,17 @@ $stock2 = $requete2->fetchAll(PDO::FETCH_OBJ);
         <div class="form-group">
             <label for="picture">Picture</label>
             <div>
+                <input name="disc_picture" id="picture" type="file">
                 <div>
-                    <img alt="img" src="assets/img/<?= $stock->disc_picture; ?> " class="img-fluid shadow mt-3">
+                <img alt="img" src="../assets/img/<?= $stock->disc_picture; ?> " class="img-fluid shadow mt-3">
                 </div>
 
             </div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-dark">Supprimer</button>
-            <a class="btn btn-dark " href="index.php">Retour</a>
+            <button type="submit" class="btn btn-dark">Modifier</button>
+            <a class="btn btn-dark " href="../index.php">Retour</a>
 
         </div>
     </form>

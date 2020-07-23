@@ -1,8 +1,8 @@
-DROP DATABASE record;
+DROP DATABASE velvet;
 
-CREATE DATABASE record;
+CREATE DATABASE velvet;
 
-USE record;
+USE velvet;
 
 CREATE TABLE artist (
 	artist_id		INT PRIMARY KEY AUTO_INCREMENT,
@@ -22,6 +22,15 @@ INSERT INTO artist (artist_id, artist_name) VALUES
 (9, 'Fleshtones'),
 (10, 'The Clash');
 
+CREATE TABLE user (
+	user_id			INT PRIMARY KEY AUTO_INCREMENT,
+	user_nom	    VARCHAR(255),
+	user_prenom		VARCHAR(255),
+	user_mail	    VARCHAR(255),
+	user_mdp		VARCHAR(255),
+	user_genre		VARCHAR(255)
+);
+
 
 CREATE TABLE disc (
 	disc_id			INT PRIMARY KEY AUTO_INCREMENT,
@@ -32,7 +41,9 @@ CREATE TABLE disc (
 	disc_genre		VARCHAR(255),
 	disc_price		DECIMAL(6,2),
 	artist_id		INT NULL,
-	FOREIGN KEY (artist_id) REFERENCES artist(artist_id)
+	user_id         INT NULL,
+	FOREIGN KEY (artist_id) REFERENCES artist(artist_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
 
@@ -53,5 +64,6 @@ INSERT INTO disc (disc_id, disc_title, disc_year, disc_picture, disc_label, disc
 	(14, 'Beggars Banquet', 1968, 'Beggars Banquet.jpeg', 'Rolling Stones Records', 'Blues Rock, Classic Rock', 33.00, 1),
 	(15, 'Laboratory of sound', 1995, 'Laboratory of sound.jpeg', 'Rebel Rec.', 'Rock', 33.00, 9);
 ;
+
 
 

@@ -20,7 +20,9 @@ if (isset($_POST) && !empty($_POST)) {
         $_POST["disc_genre"],
         $_POST["disc_price"],
         $_POST["artist_id"]
+
     ]);
+
     var_dump($requete);
     var_dump($result);
     move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "../img/".$_FILES["disc_picture"]["name"]);

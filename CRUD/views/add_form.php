@@ -1,6 +1,14 @@
 <?php
-require "fonctions/fonctions.php";
-include ("assets/template/head.php");
+require ("../fonctions/fonctions.php");
+
+$_POST["subpath"] = "sub_form.php";
+$_POST["connexionpath"] = "login_form.php";
+
+if(file_exists("../assets/template/head.php")) {
+    include("../assets/template/head.php");
+};
+
+
 
 $db = connexionBase();
 
@@ -15,11 +23,11 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
     <body>
 
     <p class="h3 font-weight-bold">Ajouter un vinyle</p>
-    <form action="script/add_script.php" method="post" enctype="multipart/form-data">
+    <form action="../script/add_script.php" method="post" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="title">Titre</label>
-        <input type="input" name="disc_title" class="form-control" id="title" placeholder="Enter title">
+        <input type="text" name="disc_title" class="form-control" id="title" placeholder="Enter title">
     </div>
 
     <div class="form-group">
@@ -62,7 +70,7 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
 
     <div class="form-group">
         <button type="submit" class="btn btn-dark">Ajouter</button>
-        <button type="reset" class="btn btn-dark">Retour</button>
+        <a class="btn btn-dark " href="../index.php">Retour</a>
 
     </div>
     </form>
