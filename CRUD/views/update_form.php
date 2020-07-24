@@ -1,16 +1,20 @@
 <?php
+session_start();
 include("../assets/template/head.php");
 
 require "../fonctions/fonctions.php";
 
 $_POST["subpath"] = "sub_form.php";
 $_POST["connexionpath"] = "login_form.php";
+$_POST["disconnectpath"] = "logout_script.php";
+
 
 
 $db = connexionBase();
 
 $disc_id = $_GET['disc_id'];
-$requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id WHERE disc.disc_id = $disc_id ");
+$requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id 
+                                WHERE disc.disc_id = $disc_id ");
 $requete2 = $db->query("SELECT * FROM artist");
 
 $stock = $requete->fetchObject();

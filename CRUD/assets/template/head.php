@@ -21,11 +21,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active text-light" href="#">Liste <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link text-light text-left"
-               href="<?= isset($_POST["subpath"]) && !empty($_POST["subpath"]) ? $_POST["subpath"] : "" ?>">Inscription</a>
-            <a class="nav-item nav-link text-light text-left"
-               href="<?= isset($_POST["connexionpath"]) && !empty($_POST["connexionpath"]) ? $_POST["connexionpath"] : "" ?>">Connexion</a>
+            <a class="nav-item nav-link active text-light" href="index.php">Liste <span class="sr-only">(current)</span></a>
+            <?php
+            if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
+                ?>
+                <a class="nav-item nav-link text-light text-left"
+                   href="<?= isset($_POST["disconnectpath"])
+                       ? $_POST["disconnectpath"] : "" ?>">Déconnexion</a>
+                <?php
+            } else {
+                ?>
+                <a class="nav-item nav-link text-light text-left"
+                   href="<?= isset($_POST["subpath"]) && !empty($_POST["subpath"])
+                       ? $_POST["subpath"] : "" ?>">Inscription</a>
+                <a class="nav-item nav-link text-light text-left"
+                   href="<?= isset($_POST["connexionpath"]) && !empty($_POST["connexionpath"])
+                       ? $_POST["connexionpath"] : "" ?>">Connexion</a>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </nav>

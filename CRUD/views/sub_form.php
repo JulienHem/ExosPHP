@@ -20,21 +20,21 @@ $db = connexionBase();
         <div class="form-row" >
             <div class="col">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom" name="user_nom" class="form-control" placeholder="Ex : Dupont">
+                <input type="text" id="nom" name="user_nom" class="form-control" placeholder="Ex : Dupont"><p id="nom_error"></p>
             </div>
         </div>
         <div class="form-row">
 
             <div class="col">
                 <label for="prénom">Prénom</label>
-                <input type="text" id="prénom" name="user_prénom" class="form-control" placeholder="Ex : Julien">
+                <input type="text" id="prenom" name="user_prénom" class="form-control" placeholder="Ex : Julien">
             </div>
         </div>
 
         <div class="form-row">
             <div class="col">
-                <label for="genre">Mail</label>
-                <input type="text" id="genre" name="user_mail" class="form-control" placeholder="Ex : SauronOnFleek@gmail.com" ">
+                <label for="mail">Mail</label>
+                <input type="text" id="mail" name="user_mail" class="form-control" placeholder="Ex : SauronOnFleek@gmail.com" ">
             </div>
         </div>
 

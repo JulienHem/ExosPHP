@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "../fonctions/fonctions.php";
 
 $_POST["subpath"] = "sub_form.php";

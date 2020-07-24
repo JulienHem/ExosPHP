@@ -1,6 +1,9 @@
 <?php
 
 
+/**
+ * @return PDO
+ */
 function connexionBase()
 {
     // Paramètre de connexion serveur
@@ -17,6 +20,17 @@ function connexionBase()
         echo 'N° : ' . $e->getCode() . '<br>';
         die('Connexion au serveur impossible.');
     }
+}
+
+
+function check($regex, $id)
+{
+    preg_match($regex, $id);
+    if (preg_match($regex, $id)) {
+        return true;
+    } else {
+        return false;
+    };
 }
 
 

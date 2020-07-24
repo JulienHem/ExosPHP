@@ -5,6 +5,7 @@ require "fonctions/fonctions.php";
 
 $_POST["subpath"] = "views/sub_form.php";
 $_POST["connexionpath"] = "views/login_form.php";
+$_POST["disconnectpath"] = "script/logout_script.php";
 
 if (file_exists("assets/template/head.php")) {
     include("assets/template/head.php");
@@ -31,7 +32,12 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
         </div>
         <div class="col-sm-12 col-md-6 col-xl-6 p-0 d-flex justify-content-center
      justify-content-md-end justify-content-lg-end mb-2 ">
+            <?php
+            if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
+            ?>
             <a class="btn btn-dark " href="views/add_form.php">Ajouter</a>
+            <?php }
+            ?>
         </div>
     </div>
 
@@ -53,12 +59,12 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
                         <p class="font-weight-bold text-center text-md-center text-lg-left mt-4 mb-n1"><?= $value->artist_name ?></p>
                         <p class="text-center text-md-center text-lg-left mb-n1"><b>Label</b>
                             : <?= $value->disc_label ?></p>
-                        <p class="text-center text-md-center text-lg-left mb-n1"><b>Year</b> : <?= $value->disc_year ?>
+                        <p class="text-center text-md-center text-lg-left mb-n1"><b>Année</b> : <?= $value->disc_year ?>
                         </p>
                         <p class="text-center text-md-center text-lg-left "><b>Genre</b> : <?= $value->disc_genre ?></p>
                         <div class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">
                             <a class="btn btn-dark"
-                               href="details.php?disc_id=<?= $value->disc_id ?>">Details</a>
+                               href="details.php?disc_id=<?= $value->disc_id ?>">Détails</a>
                         </div>
                     </div>
 

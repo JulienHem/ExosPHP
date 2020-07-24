@@ -3,6 +3,7 @@
     <words>
       <w>affecté</w>
       <w>affichez</w>
+      <w>ajout</w>
       <w>ajouter</w>
       <w>ajoutez</w>
       <w>année</w>
@@ -12,22 +13,32 @@
       <w>bonjour</w>
       <w>boucle</w>
       <w>cette</w>
+      <w>connecter</w>
+      <w>connexionpath</w>
       <w>contenu</w>
       <w>courante</w>
       <w>datediff</w>
       <w>ddate</w>
+      <w>disconnectpath</w>
+      <w>déconnexion</w>
       <w>déterminer</w>
       <w>ecrit</w>
+      <w>entrer</w>
       <w>erreur</w>
       <w>erronée</w>
       <w>essai</w>
+      <w>femme</w>
       <w>fichier</w>
       <w>filerequest</w>
       <w>fileresult</w>
+      <w>fonctions</w>
       <w>forme</w>
+      <w>getmdp</w>
+      <w>homme</w>
       <w>jours</w>
       <w>jusqu</w>
       <w>ligne</w>
+      <w>loginobject</w>
       <w>modif</w>
       <w>mois</w>
       <w>moncompteur</w>
@@ -40,17 +51,25 @@
       <w>postrequete</w>
       <w>postresult</w>
       <w>première</w>
+      <w>prenom</w>
       <w>problème</w>
       <w>prénom</w>
       <w>requete</w>
       <w>reste</w>
+      <w>retour</w>
       <w>région</w>
       <w>separ</w>
       <w>seule</w>
+      <w>subpath</w>
       <w>supprimer</w>
       <w>sélectionné</w>
+      <w>toggler</w>
+      <w>valider</w>
+      <w>verif</w>
       <w>verifmdp</w>
+      <w>veuillez</w>
       <w>visiteurs</w>
+      <w>votre</w>
     </words>
   </dictionary>
 </component>

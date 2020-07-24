@@ -1,8 +1,18 @@
 <?php
+session_start();
+
 require "../fonctions/fonctions.php";
 
 $db = connexionBase();
 
+if ($_SESSION["login"])
+{
+    echo"Vous êtes autorisé à voir cette page.";
+}
+else
+{
+    echo"Cette page nécessite une identification.";
+}
 
 
 $requete = $db->prepare("INSERT INTO disc(disc_title, disc_year, disc_picture,
@@ -29,7 +39,7 @@ if (isset($_POST) && !empty($_POST)) {
 
 }
 
-if ($result = true){
+if ($result){
     header("Location: ../index.php");
 }
 else {

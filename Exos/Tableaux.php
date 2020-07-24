@@ -113,8 +113,8 @@ $departements = array(
 );
 
 ksort($departements);
-foreach ($departements as $région => $dpt) {
-    echo($région. ':');
+foreach ($departements as $region => $dpt) {
+    echo($region. ':');
     foreach ($dpt as $reg) {
         echo($reg . " ");
     }
