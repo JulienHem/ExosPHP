@@ -41,9 +41,18 @@ $db = connexionBase();
         <div class="form-row">
             <div class="col">
                 <label for="mdp">Mot de passe</label>
-                <input type="text" id="mdp" name="user_mdp" class="form-control">
+                <input type="password" id="mdp" name="user_mdp" class="form-control">
             </div>
         </div>
+
+        <div class="form-row">
+            <div class="col">
+                <label for="mdp">Confirmation du Mot de Passe</label>
+                <input type="password" id="mdp2" name="user_mdp2" class="form-control">
+            </div>
+        </div>
+
+
 
 
         <div class="form-check form-check-inline">

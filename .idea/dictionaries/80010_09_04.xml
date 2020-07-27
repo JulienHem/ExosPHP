@@ -26,6 +26,7 @@
       <w>entrer</w>
       <w>erreur</w>
       <w>erronée</w>
+      <w>errormsg</w>
       <w>essai</w>
       <w>femme</w>
       <w>fichier</w>
@@ -35,6 +36,7 @@
       <w>forme</w>
       <w>getmdp</w>
       <w>homme</w>
+      <w>identique</w>
       <w>jours</w>
       <w>jusqu</w>
       <w>ligne</w>
@@ -44,6 +46,7 @@
       <w>moncompteur</w>
       <w>monde</w>
       <w>montrez</w>
+      <w>msgerror</w>
       <w>navbar</w>
       <w>ouvre</w>
       <w>passé</w>
@@ -54,6 +57,7 @@
       <w>prenom</w>
       <w>problème</w>
       <w>prénom</w>
+      <w>rentrez</w>
       <w>requete</w>
       <w>reste</w>
       <w>retour</w>
@@ -62,8 +66,12 @@
       <w>seule</w>
       <w>subpath</w>
       <w>supprimer</w>
+      <w>sélectionnez</w>
       <w>sélectionné</w>
+      <w>tabuser</w>
+      <w>tabverif</w>
       <w>toggler</w>
+      <w>valide</w>
       <w>valider</w>
       <w>verif</w>
       <w>verifmdp</w>

@@ -33,5 +33,4 @@ function check($regex, $id)
     };
 }
 
-
 ?>
