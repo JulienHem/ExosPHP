@@ -8,8 +8,6 @@ $_POST["subpath"] = "sub_form.php";
 $_POST["connexionpath"] = "login_form.php";
 $_POST["disconnectpath"] = "logout_script.php";
 
-
-
 $db = connexionBase();
 
 $disc_id = $_GET['disc_id'];

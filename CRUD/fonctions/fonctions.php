@@ -33,4 +33,14 @@ function check($regex, $id)
     };
 }
 
+function redirect ($errortab, $page) {
+    if (sizeof($errortab) === 0){
+        header("Location:".$page);
+    } else {
+        foreach ($errortab AS $errorMsg) {
+            echo $errorMsg. "<br>";
+        }
+    }
+}
+
 ?>

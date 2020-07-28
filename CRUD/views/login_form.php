@@ -11,7 +11,6 @@ if (file_exists("../assets/template/head.php")) {
 };
 
 $db = connexionBase();
-
 ?>
 
 
@@ -29,8 +28,8 @@ $db = connexionBase();
         <div class="form-row">
 
             <div class="col">
-                <label for="prénom">Mot de passe</label>
-                <input type="text" id="prénom" name="user_mdp" class="form-control" placeholder="Veuillez entrer votre mot de passe">
+                <label for="mdp">Mot de passe</label>
+                <input type="password" id="mdp" name="user_mdp" class="form-control" placeholder="Veuillez entrer votre mot de passe">
             </div>
         </div>
 

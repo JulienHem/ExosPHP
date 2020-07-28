@@ -8,11 +8,14 @@
       <w>ajoutez</w>
       <w>année</w>
       <w>aucun</w>
+      <w>autorisé</w>
+      <w>autorisés</w>
       <w>avant</w>
       <w>bisextile</w>
       <w>bonjour</w>
       <w>boucle</w>
       <w>cette</w>
+      <w>ceux</w>
       <w>connecter</w>
       <w>connexionpath</w>
       <w>contenu</w>
@@ -20,7 +23,9 @@
       <w>datediff</w>
       <w>ddate</w>
       <w>disconnectpath</w>
+      <w>donc</w>
       <w>déconnexion</w>
+      <w>déplacer</w>
       <w>déterminer</w>
       <w>ecrit</w>
       <w>entrer</w>
@@ -28,19 +33,29 @@
       <w>erronée</w>
       <w>errormsg</w>
       <w>essai</w>
+      <w>extrait</w>
       <w>femme</w>
       <w>fichier</w>
+      <w>fichiers</w>
       <w>filerequest</w>
       <w>fileresult</w>
+      <w>finfo</w>
       <w>fonctions</w>
       <w>forme</w>
+      <w>getid</w>
+      <w>getlogin</w>
       <w>getmdp</w>
       <w>homme</w>
       <w>identique</w>
+      <w>idquery</w>
       <w>jours</w>
       <w>jusqu</w>
       <w>ligne</w>
+      <w>liste</w>
+      <w>listepath</w>
       <w>loginobject</w>
+      <w>mauvais</w>
+      <w>mimetype</w>
       <w>modif</w>
       <w>mois</w>
       <w>moncompteur</w>
@@ -48,15 +63,21 @@
       <w>montrez</w>
       <w>msgerror</w>
       <w>navbar</w>
+      <w>nécessite</w>
       <w>ouvre</w>
+      <w>parmi</w>
       <w>passé</w>
+      <w>pjpeg</w>
       <w>positionne</w>
       <w>postrequete</w>
       <w>postresult</w>
+      <w>pouvoir</w>
       <w>première</w>
       <w>prenom</w>
+      <w>prix</w>
       <w>problème</w>
       <w>prénom</w>
+      <w>renommer</w>
       <w>rentrez</w>
       <w>requete</w>
       <w>reste</w>
@@ -68,6 +89,9 @@
       <w>supprimer</w>
       <w>sélectionnez</w>
       <w>sélectionné</w>
+      <w>tabartist</w>
+      <w>tabdisc</w>
+      <w>tabupdate</w>
       <w>tabuser</w>
       <w>tabverif</w>
       <w>toggler</w>

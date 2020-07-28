@@ -9,7 +9,10 @@ if (file_exists("assets/template/head.php")) {
 
 $db = connexionBase();
 
+$_POST["listepath"] = "index.php";
 $_POST["subpath"] = "views/sub_form.php";
+
+
 
 
 $disc_id = $_GET['disc_id'];
