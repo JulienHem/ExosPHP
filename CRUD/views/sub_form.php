@@ -3,57 +3,58 @@
 require "../fonctions/fonctions.php";
 
 
-$_POST["connexionpath"] = "login_form";
-
-if(file_exists("../assets/template/head.php")) {
-    include("../assets/template/head.php");
+if (file_exists("head.php")) {
+    include("head.php");
 };
 
 $db = connexionBase();
 
 ?>
 
-
+<body>
 <div class="container">
     <p class="h3 font-weight-bold text-center">Inscription</p>
 
-    <form action="../script/sub_script.php" method="post" enctype="multipart/form-data">
-        <div class="form-row" >
+    <form id="sub-form" action="../script/sub_script.php" method="post" enctype="multipart/form-data">
+        <div class="form-row">
             <div class="col">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="user_nom" class="form-control" placeholder="Ex : Dupont"><p id="nom_error"></p>
+                <label for="user_nom">Nom</label>
+                <input type="text" id="user_nom" name="user_nom" class="form-control" placeholder="Ex : Dupont">
+                <p id="nom_error"></p>
             </div>
         </div>
         <div class="form-row">
 
             <div class="col">
-                <label for="prénom">Prénom</label>
-                <input type="text" id="prenom" name="user_prénom" class="form-control" placeholder="Ex : Julien">
+                <label for="user_prénom">Prénom</label>
+                <input type="text" id="user_prénom" name="user_prénom" class="form-control" placeholder="Ex : Julien">
+                <p id="prénom_error"></p>
             </div>
         </div>
 
         <div class="form-row">
             <div class="col">
-                <label for="mail">Mail</label>
-                <input type="text" id="mail" name="user_mail" class="form-control" placeholder="Ex : SauronOnFleek@gmail.com" ">
+                <label for="user_mail">Mail</label>
+                <input type="text" id="user_mail" name="user_mail" class="form-control"
+                       placeholder="Ex : SauronOnFleek@gmail.com"><p id="mail_error"></p>
             </div>
         </div>
 
         <div class="form-row">
             <div class="col">
-                <label for="mdp">Mot de passe</label>
-                <input type="password" id="mdp" name="user_mdp" class="form-control">
+                <label for="user_mdp">Mot de passe</label>
+                <input type="password" id="user_mdp" name="user_mdp" class="form-control">
+                <p id="mdp_error"></p>
             </div>
         </div>
 
         <div class="form-row">
             <div class="col">
-                <label for="mdp">Confirmation du Mot de Passe</label>
-                <input type="password" id="mdp2" name="user_mdp2" class="form-control">
+                <label for="user_mdp2">Confirmation du Mot de Passe</label>
+                <input type="password" id="user_mdp2" name="user_mdp2" class="form-control">
+                <p id="mdp2_error"></p>
             </div>
         </div>
-
-
 
 
         <div class="form-check form-check-inline">
@@ -66,7 +67,7 @@ $db = connexionBase();
         </div>
 
         <div class="mt-3">
-            <button type="submit" class="btn btn-dark">S'inscrire</button>
+            <button type="submit" id="subbutton" class="btn btn-dark">S'inscrire</button>
             <button type="reset" class="btn btn-dark">Reset</button>
             <a class="btn btn-dark " href="../index.php">Retour</a>
 
@@ -74,3 +75,9 @@ $db = connexionBase();
 
 
     </form>
+</div>
+<script src="../script/js/fonctions.js"></script>
+<script src="../script/js/check_subform.js"></script>
+
+</body>
+</html>

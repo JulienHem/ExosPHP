@@ -1,7 +1,7 @@
 <?php
-include("../assets/template/head.php");
-
+include("head.php");
 require "../fonctions/fonctions.php";
+
 
 $db = connexionBase();
 

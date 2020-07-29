@@ -1,12 +1,15 @@
 <component name="ProjectDictionaryState">
   <dictionary name="80010-09-04">
     <words>
+      <w>addform</w>
       <w>affecté</w>
+      <w>afficher</w>
       <w>affichez</w>
       <w>ajout</w>
       <w>ajouter</w>
       <w>ajoutez</w>
       <w>année</w>
+      <w>appelle</w>
       <w>aucun</w>
       <w>autorisé</w>
       <w>autorisés</w>
@@ -14,8 +17,11 @@
       <w>bisextile</w>
       <w>bonjour</w>
       <w>boucle</w>
+      <w>cela</w>
       <w>cette</w>
       <w>ceux</w>
+      <w>checkselect</w>
+      <w>commencer</w>
       <w>connecter</w>
       <w>connexionpath</w>
       <w>contenu</w>
@@ -29,9 +35,11 @@
       <w>déterminer</w>
       <w>ecrit</w>
       <w>entrer</w>
+      <w>envoyer</w>
       <w>erreur</w>
       <w>erronée</w>
       <w>errormsg</w>
+      <w>errorselect</w>
       <w>essai</w>
       <w>extrait</w>
       <w>femme</w>
@@ -39,14 +47,19 @@
       <w>fichiers</w>
       <w>filerequest</w>
       <w>fileresult</w>
+      <w>filtre</w>
       <w>finfo</w>
+      <w>fonction</w>
       <w>fonctions</w>
       <w>forme</w>
+      <w>formulaire</w>
       <w>getid</w>
       <w>getlogin</w>
       <w>getmdp</w>
+      <w>grâce</w>
       <w>homme</w>
       <w>identique</w>
+      <w>iderror</w>
       <w>idquery</w>
       <w>jours</w>
       <w>jusqu</w>
@@ -55,6 +68,7 @@
       <w>listepath</w>
       <w>loginobject</w>
       <w>mauvais</w>
+      <w>menuselect</w>
       <w>mimetype</w>
       <w>modif</w>
       <w>mois</w>
@@ -67,6 +81,7 @@
       <w>ouvre</w>
       <w>parmi</w>
       <w>passé</w>
+      <w>permet</w>
       <w>pjpeg</w>
       <w>positionne</w>
       <w>postrequete</w>
@@ -85,12 +100,14 @@
       <w>région</w>
       <w>separ</w>
       <w>seule</w>
+      <w>subbutton</w>
       <w>subpath</w>
       <w>supprimer</w>
       <w>sélectionnez</w>
       <w>sélectionné</w>
       <w>tabartist</w>
       <w>tabdisc</w>
+      <w>tabsub</w>
       <w>tabupdate</w>
       <w>tabuser</w>
       <w>tabverif</w>
@@ -102,6 +119,7 @@
       <w>veuillez</w>
       <w>visiteurs</w>
       <w>votre</w>
+      <w>vérification</w>
     </words>
   </dictionary>
 </component>

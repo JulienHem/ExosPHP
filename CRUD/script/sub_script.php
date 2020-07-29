@@ -51,11 +51,11 @@ if (isset($_POST) && !empty($_POST)) {
 
 }
 
+}
 
-
-//if ($result = true){
-//    header("Location: ../index.php");
-//}
-//else {
-//    echo ("Erreur ! Problème ajout");
+if ($result = true){
+    header("Location: ../index.php");
+}
+else {
+    echo("Erreur ! Problème ajout");
 }

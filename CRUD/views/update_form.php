@@ -1,12 +1,10 @@
 <?php
 session_start();
-include("../assets/template/head.php");
+include("head.php");
 
 require "../fonctions/fonctions.php";
 
-$_POST["subpath"] = "sub_form.php";
-$_POST["connexionpath"] = "login_form.php";
-$_POST["disconnectpath"] = "logout_script.php";
+
 
 $db = connexionBase();
 

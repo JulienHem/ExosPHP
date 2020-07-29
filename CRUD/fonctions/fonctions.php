@@ -16,8 +16,8 @@ function connexionBase()
     try {
         return new PDO('mysql:host=' . $host . ';charset=utf8;dbname=' . $base, $login, $password);
     } catch (Exception $e) {
-        echo 'Erreur : ' . $e->getMessage() . '<br>';
-        echo 'N° : ' . $e->getCode() . '<br>';
+        echo  $e->getMessage();
+        echo  $e->getCode();
         die('Connexion au serveur impossible.');
     }
 }

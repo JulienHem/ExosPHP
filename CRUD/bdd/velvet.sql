@@ -1,4 +1,3 @@
-DROP DATABASE velvet;
 
 CREATE DATABASE velvet;
 
