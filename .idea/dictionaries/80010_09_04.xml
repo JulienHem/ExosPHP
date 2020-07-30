@@ -11,6 +11,7 @@
       <w>année</w>
       <w>appelle</w>
       <w>aucun</w>
+      <w>authentifié</w>
       <w>autorisé</w>
       <w>autorisés</w>
       <w>avant</w>
@@ -20,6 +21,7 @@
       <w>cela</w>
       <w>cette</w>
       <w>ceux</w>
+      <w>checkmail</w>
       <w>checkselect</w>
       <w>commencer</w>
       <w>connecter</w>
@@ -29,9 +31,12 @@
       <w>datediff</w>
       <w>ddate</w>
       <w>disconnectpath</w>
+      <w>disques</w>
       <w>donc</w>
       <w>déconnexion</w>
+      <w>déjà</w>
       <w>déplacer</w>
+      <w>détails</w>
       <w>déterminer</w>
       <w>ecrit</w>
       <w>entrer</w>
@@ -41,6 +46,8 @@
       <w>errormsg</w>
       <w>errorselect</w>
       <w>essai</w>
+      <w>executer</w>
+      <w>existant</w>
       <w>extrait</w>
       <w>femme</w>
       <w>fichier</w>
@@ -55,18 +62,23 @@
       <w>formulaire</w>
       <w>getid</w>
       <w>getlogin</w>
+      <w>getmail</w>
       <w>getmdp</w>
       <w>grâce</w>
       <w>homme</w>
+      <w>idcount</w>
       <w>identique</w>
       <w>iderror</w>
       <w>idquery</w>
+      <w>idverif</w>
       <w>jours</w>
       <w>jusqu</w>
+      <w>lemail</w>
       <w>ligne</w>
       <w>liste</w>
       <w>listepath</w>
       <w>loginobject</w>
+      <w>mailcheck</w>
       <w>mauvais</w>
       <w>menuselect</w>
       <w>mimetype</w>
@@ -100,6 +112,7 @@
       <w>région</w>
       <w>separ</w>
       <w>seule</w>
+      <w>sont</w>
       <w>subbutton</w>
       <w>subpath</w>
       <w>supprimer</w>
@@ -115,11 +128,14 @@
       <w>valide</w>
       <w>valider</w>
       <w>verif</w>
+      <w>verifid</w>
       <w>verifmdp</w>
       <w>veuillez</w>
       <w>visiteurs</w>
       <w>votre</w>
+      <w>vous</w>
       <w>vérification</w>
+      <w>êtes</w>
     </words>
   </dictionary>
 </component>

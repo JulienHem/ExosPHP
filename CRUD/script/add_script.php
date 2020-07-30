@@ -4,9 +4,6 @@ session_start();
 require "../fonctions/fonctions.php";
 
 if ($_SESSION["login"]) {
-} else {
-    echo "Cette page nécessite une identification.";
-}
 
 $db = connexionBase();
 
@@ -15,7 +12,7 @@ $requete = $db->prepare("INSERT INTO disc(disc_title, disc_year, disc_picture,
 $idquery = $db->query("SELECT artist_id FROM artist");
 $getid = $idquery->fetch();
 
-$tabdisc = [
+$tabdisc = [ // TABLEAU DE VERIFICATION AVEC L'ID, MSG ERREUR ET REGEXP
     "disc_title" => array("Le titre est incorrect", "/^(\w+\D){2,20}$/"),
     "artist_id" => array("Sélectionnez un artist valide", "/^[\\w]{2,50}$/"),
     "disc_year" => array("Rentrez une année valide", "/^\d{4}$/"),
@@ -27,6 +24,7 @@ $tabdisc = [
 
 $tabverif = [];
 foreach ($tabdisc as $id => $verif) {
+    // ON APPELLE LA FONCTION CHECK POUR POUVOIR ANALYSER L'INPUT ET DE LE COMPARER AVEC LE TABLEAU
     if (!check($verif[1], $_POST[$id]) && (!empty($_POST[$id])) && $getid == $_POST["artist_id"]) {
         $tabverif[$id] = $verif[0];
     };
@@ -74,11 +72,16 @@ if (isset($_POST) && !empty($_POST)) {
             exit;
         }
     }
+
+}
+if ($result){
+    header("Location: ../index.php");
+}
+else {
+    echo ("Erreur ! Problème ajout");
+}
+} else {
+    echo "Cette page nécessite une identification.";
 }
 
-//if ($result){
-//    header("Location: ../index.php");
-//}
-//else {
-//    echo ("Erreur ! Problème ajout");
-//}
+

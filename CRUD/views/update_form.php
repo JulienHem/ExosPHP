@@ -5,6 +5,7 @@ include("head.php");
 require "../fonctions/fonctions.php";
 
 
+if (isset($_SESSION["login"])) {
 
 $db = connexionBase();
 
@@ -12,9 +13,15 @@ $disc_id = $_GET['disc_id'];
 $requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id 
                                 WHERE disc.disc_id = $disc_id ");
 $requete2 = $db->query("SELECT * FROM artist");
-
 $stock = $requete->fetchObject();
 $stock2 = $requete2->fetchAll(PDO::FETCH_OBJ);
+
+$idcount = $requete -> rowCount(); // PERMET DE COMPARER SELON LE NOMBRE DE LIGNES DANS LA BDD
+
+if ($idcount === 0) { // ROWCOUNT RETOURNE 0 SI LE RESULTAT EST FAUX
+    echo "Cet id ne correspond pas"; // SI CEST 0 ALORS L'ERREUR S'AFFICHE
+}
+else {
 
 ?>
 
@@ -79,3 +86,9 @@ $stock2 = $requete2->fetchAll(PDO::FETCH_OBJ);
 
         </div>
     </form>
+    </body><?php
+    }
+    } else {
+        echo "Cette page nécessite une identification.";
+    }
+    ?>

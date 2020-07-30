@@ -23,22 +23,23 @@ function connexionBase()
 }
 
 
-function check($regex, $id)
+function check($regex, $id) // FONCTION QUI VA PERMETTRE LES VERIFICATIONS DES CHAMPS
+    // QUE L'ON APPELLE DANS LES SCRIPTS POUR POUVOIR LANCER CETTE DERNIERE
 {
     preg_match($regex, $id);
     if (preg_match($regex, $id)) {
-        return true;
+        return true; // SI TRUE ALORS ON ENVOIE
     } else {
-        return false;
+        return false; // SI FALSE ON AFFICHE LES ERREURS
     };
 }
 
-function redirect ($errortab, $page) {
-    if (sizeof($errortab) === 0){
+function redirect ($errortab, $page) { // PERMET DE REDIRIGER L'UTIISATEUR
+    if (sizeof($errortab) === 0){ // SI IL N'Y A PAS D'ERREUR ALORS ON REDIRIGE
         header("Location:".$page);
     } else {
         foreach ($errortab AS $errorMsg) {
-            echo $errorMsg. "<br>";
+            echo $errorMsg. "<br>"; // SI IL Y'A UNE ERREUR ALORS ON AFFICHE LE MSG D'ERREUR
         }
     }
 }

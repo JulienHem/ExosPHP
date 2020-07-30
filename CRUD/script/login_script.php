@@ -3,8 +3,8 @@ require "../fonctions/fonctions.php";
 
 session_start();
 
-
-$db = connexionBase();
+if (!isset($_SESSION["login"])) {
+    $db = connexionBase();
 $getlogin = $db->prepare("SELECT * FROM user WHERE user_mail = ?");
 
 $tabuser = [
@@ -22,8 +22,8 @@ foreach ($tabuser as $id => $verif) {
 
 
 if (isset($_POST["user_mail"]) && !empty($_POST["user_mail"])  && isset($_POST["user_mdp"]) &&
-    !empty($_POST["user_mdp"])) {
-    if (sizeof($tabverif) === 0) {
+    !empty($_POST["user_mdp"])) { // VERIFIE SI IL YA UN CHAMP VIDE
+    if (sizeof($tabverif) === 0) { // SI LE TABLEAU DANS LEQUEL SE TROUVE LES VERIFS EST VIDE ALORS ON PEUT EXECUTER
 
 
         $getlogin->execute(
@@ -36,9 +36,12 @@ if (isset($_POST["user_mail"]) && !empty($_POST["user_mail"])  && isset($_POST["
 
     }
 }else {
-    redirect($tabverif, "../views/login_form.php");
+    redirect($tabverif, "../views/login_form.php"); // REDIRIGE SI IL YA UNE ERREUR
 
-};
+}
+} else {
+    echo "Vous êtes déjà authentifié";
+}
 
 
 

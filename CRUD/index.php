@@ -9,10 +9,6 @@ $db = connexionBase();
 $requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id");
 $stock = $requete->fetchAll(PDO::FETCH_OBJ);
 
-
-//var_dump($stock);
-
-
 ?>
 
 <html>
@@ -31,7 +27,7 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-2">
-    <a class="navbar-brand text-light" href="../index.php">Velvet Records</a>
+    <a class="navbar-brand text-light" href="#">Velvet Records</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,6 +35,8 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active text-light" href="#">Liste <span class="sr-only">(current)</span></a>
+           <!-- LE BOUTON "DECONNEXION" SERA VISIBILE SEULEMENT UNE FOIS QUE
+                                   L'UTILISATEUR SERA CONNECTE -->
             <?php
             if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
                 ?>
@@ -67,6 +65,7 @@ $stock = $requete->fetchAll(PDO::FETCH_OBJ);
         </div>
         <div class="col-sm-12 col-md-6 col-xl-6 p-0 d-flex justify-content-center
      justify-content-md-end justify-content-lg-end mb-2 ">
+            <!--LE BOUTON "AJOUTER" SERA AFFICHE SEULEMENT SI L'UTILISATEUR EST CONNECTE-->
             <?php
             if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
                 ?>

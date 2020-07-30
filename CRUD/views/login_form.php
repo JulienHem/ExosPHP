@@ -17,7 +17,7 @@ $db = connexionBase();
     <form id="log-form" action="../script/login_script.php" method="post" enctype="multipart/form-data">
         <div class="form-row">
             <div class="col">
-                <label for="nom">Login</label>
+                <label for="user-mail">Login</label>
                 <input type="text" id="user-mail" name="user_mail" class="form-control"
                        placeholder="Veuillez entrer votre mail"><p id="mail-error"></p>
             </div>
@@ -25,7 +25,7 @@ $db = connexionBase();
         <div class="form-row">
 
             <div class="col">
-                <label for="mdp">Mot de passe</label>
+                <label for="user-mdp">Mot de passe</label>
                 <input type="password" id="user-mdp" name="user_mdp" class="form-control"
                        placeholder="Veuillez entrer votre mot de passe">
                 <p id="mdp-error"></p>

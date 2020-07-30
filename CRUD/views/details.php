@@ -6,92 +6,84 @@ if (file_exists("head.php")) {
     include("head.php");
 };
 
-
 $db = connexionBase();
 
 $disc_id = $_GET['disc_id'];
+
 $requete = $db->query("SELECT * FROM disc JOIN artist 
                                 ON artist.artist_id = disc.artist_id 
                                 WHERE disc.disc_id = $disc_id");
-$stock = $requete->fetchObject();
+$stock = $requete->fetchObject(); // ON RECUPERER LES VALEURS EN TANT QU'OBJET
 
-?>
-<div class="container">
-    <p class="h3 font-weight-bold">Détails</p>
+$idcount = $requete -> rowCount();// ROWCOUNT RETOURNE 0 SI LE RESULTAT EST FAUX
 
-    <form>
-        <div class="form-row pb-2">
+if ($idcount === 0) { // SI CEST 0 ALORS L'ERREUR S'AFFICHE
+    echo "Cet id ne correspond pas";
+}
+else {
+    ?>
+    <div class="container">
+        <h1>Détails</h1>
+        <form>
+            <div class="form-row">
 
-            <div class="col">
-                <label for="titre">Titre</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="titre" class="mb-n1"><?= $stock->disc_title; ?></p>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6  ">
+                    <h3>Title</h3>
+                    <div class="bg-light rounded "><p id="titre" class="p-2"><?= $stock->disc_title; ?></p>
+                    </div>
+                    <h3>Année</h3>
+                    <div class="bg-light rounded "><p id="titre" class="p-2"><?= $stock->disc_year; ?></p>
+                    </div>
+                    <h3>Label</h3>
+                    <div class="bg-light rounded "><p id="titre" class="p-2"><?= $stock->disc_label; ?></p>
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-2 ">
+
+                    <h3>Artiste</h3>
+                    <div class="bg-light rounded ">
+                        <p class="p-2" id="artiste"><?= $stock->artist_name; ?></p>
+                    </div>
+                    <h3>Genre</h3>
+                    <div class="bg-light rounded ">
+                        <p class="p-2" id="artiste"><?= $stock->disc_genre; ?></p>
+                    </div>
+
+                    <h3>Prix</h3>
+                    <div class="bg-light rounded ">
+                        <p class="p-2" id="artiste"><?= $stock->disc_price; ?></p>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <label for="artiste">Artiste</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="artiste"><?= $stock->artist_name; ?></p>
+
+            <div class="form-row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6  ">
+                    <h3>Photo</h3>
                 </div>
             </div>
-        </div>
+            <img alt="img" src="../assets/img/<?= $stock->disc_picture; ?> " class="img-fluid shadow">
 
 
-        <div class="form-row pb-2">
-
-            <div class="col">
-                <label for="année">Année</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="année"><?= $stock->disc_year; ?></p>
-                </div>
-            </div>
-            <div class="col">
-                <label for="genre">Genre</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="genre"><?= $stock->disc_genre; ?></p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="form-row pb-1">
-
-            <div class="col">
-                <label for="label">Label</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="label"><?= $stock->disc_label; ?></p>
-                </div>
-            </div>
-            <div class="col">
-                <label for="prix">Prix</label>
-                <div class="bg-light border border-secondary rounded ">
-                    <p id="prix"><?= $stock->disc_price; ?></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="col h3 mt-3">
-                <label for="label">Picture</label>
-            </div>
-        </div>
-        <img alt="img" src="../assets/img/<?= $stock->disc_picture; ?> " class="img-fluid shadow">
-
-
-        <div class="mt-3">
-            <?php
-            if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
-                ?>
-                <a class="btn btn-dark " href="update_form.php?disc_id=<?= $stock->disc_id ?>">Modifier</a>
-                <a class="btn btn-dark " href="delete_form.php?disc_id=<?= $stock->disc_id ?>">Supprimer</a>
+            <div class="mt-3">
                 <?php
-            }
-            ?>
-            <a class="btn btn-dark " href="../index.php">Retour</a>
-        </div>
+                if (isset($_SESSION["login"]) && !empty($_SESSION["login"])) {
+                    ?>
+                    <a class="btn btn-dark " href="update_form.php?disc_id=<?= $stock->disc_id ?>">Modifier</a>
+                    <a class="btn btn-dark " href="delete_form.php?disc_id=<?= $stock->disc_id ?>">Supprimer</a>
+                    <?php
+                }
+                ?>
+                <a class="btn btn-dark " href="../index.php">Retour</a>
+            </div>
 
 
-    </form>
+        </form>
 
-</div>
-</html>
+
+    </div>
+<?php } ?>
+    </html>
