@@ -7,16 +7,6 @@ $db = connexionBase();
 
 if (isset($_SESSION["login"])) { // SI L'UTILISATEUR EST CONNECTE ALORS LE SCRIPT PEUT SE LANCER
 
-    $disc_id = $_GET['disc_id'];
-
-    $postrequete = $db->prepare("UPDATE disc SET disc_title = ?, disc_year = ?,
- disc_label = ?, disc_genre = ?, disc_price = ?, artist_id = ? WHERE disc.disc_id = $disc_id");
-
-    $idquery = $db->query("SELECT artist_id FROM artist");
-    $getid = $idquery->fetch();
-
-    $filerequest = $db->prepare("UPDATE disc SET disc_picture = ? WHERE 
-    disc.disc_id = $disc_id");
 
 
     $tabdisc = [ // TABLEAU QUI A L'ID, MSG D'ERREUR ET LE REGEXP POUR POUVOIR VERIFIER LES CHAMPS
@@ -28,6 +18,10 @@ if (isset($_SESSION["login"])) { // SI L'UTILISATEUR EST CONNECTE ALORS LE SCRIP
         "disc_price" => array("Veuillez entrer un prix valide", "/^\d+(,\d{1,2})?$/"),
 
     ];
+
+
+    $idquery = $db->query("SELECT artist_id FROM artist");
+    $getid = $idquery->fetch();
 
     $tabupdate = []; // VA VERIFIER LES CHAMPS PAR RAPPORT AU TABLEAU TABDISC
     foreach ($tabdisc as $id => $verif) {
@@ -45,11 +39,29 @@ if (isset($_SESSION["login"])) { // SI L'UTILISATEUR EST CONNECTE ALORS LE SCRIP
     $mimetype = finfo_file($finfo, $_FILES["disc_picture"]["tmp_name"]);
     finfo_close($finfo);
 
+    $disc_id = $_GET['disc_id'];
 
     if (isset($_POST) && !empty($_POST)) {
-        if (sizeof($tabupdate) === 0) {
+        if (isset($_FILES) && !empty($_FILES)) {
+            if (in_array($mimetype, $aMimeTypes)) {
+                /* Le type est parmi ceux autorisés, donc OK, on va pouvoir
+                   déplacer et renommer le fichier */
+                $filerequest = $db->prepare("UPDATE disc SET disc_picture = ? WHERE 
+                 disc.disc_id = $disc_id");
+
+                $fileresult = $filerequest->execute([
+
+                    basename($_FILES["disc_picture"]["name"])
+
+                ]);
+            } else {
+                echo "Mauvais type de fichier"; // SI LE TYPE DE FICHIER NE CORRESPOND PAS LE MSG D'ERREUR S'AFFICHE
+            }
+        }
 
 
+            $postrequete = $db->prepare("UPDATE disc SET disc_title = ?, disc_year = ?,
+            disc_label = ?, disc_genre = ?, disc_price = ?, artist_id = ? WHERE disc.disc_id = $disc_id");
             $postresult = $postrequete->execute([
 
                 $_POST["disc_title"],
@@ -64,26 +76,9 @@ if (isset($_SESSION["login"])) { // SI L'UTILISATEUR EST CONNECTE ALORS LE SCRIP
             var_dump($postresult);
 
         }
-    }
 
 
     if (is_uploaded_file($_FILES['disc_picture']['tmp_name'])) {
-
-
-        if (isset($_FILES) && !empty($_FILES)) {
-            if (in_array($mimetype, $aMimeTypes)) {
-                /* Le type est parmi ceux autorisés, donc OK, on va pouvoir
-                   déplacer et renommer le fichier */
-
-                $fileresult = $filerequest->execute([
-
-                    basename($_FILES["disc_picture"]["name"])
-
-                ]);
-            } else {
-                echo "Mauvais type de fichier"; // SI LE TYPE DE FICHIER NE CORRESPOND PAS LE MSG D'ERREUR S'AFFICHE
-            }
-        }
         move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "../assets/img/" . $_FILES["disc_picture"]["name"]);
 
     }
